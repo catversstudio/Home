@@ -7,7 +7,6 @@
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&amp;family=Inter:wght@100..900&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
 <style>
         .material-symbols-outlined {
             font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
@@ -81,6 +80,11 @@
             color: #e5e2e1;
             overflow-x: hidden;
         }
+
+        /* Nav Transition */
+        #main-header {
+            transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
     </style>
 <script id="tailwind-config">
       tailwind.config = {
@@ -110,6 +114,267 @@
                     "primary": "#ddb7ff",
                     "on-error": "#690005",
                     "secondary-fixed": "#a2eeff",
+                    "surface-variant": "#353534",
+                    "secondary-container": "#00cbe6",
+                    "on-tertiary-fixed": "#3d0026",
+                    "on-tertiary-fixed-variant": "#85145a",
+                    "secondary": "#5de6ff",
+                    "outline": "#988d9f",
+                    "error": "#ffb4ab",
+                    "on-tertiary": "#620040",
+                    "surface": "#131313",
+                    "on-tertiary-container": "#560038",
+                    "on-primary-fixed": "#2c0051",
+                    "on-primary-fixed-variant": "#6900b3",
+                    "inverse-primary": "#842bd2",
+                    "surface-bright": "#3a3939",
+                    "on-primary": "#490080",
+                    "outline-variant": "#4d4354",
+                    "primary-fixed": "#f0dbff",
+                    "inverse-on-surface": "#313030",
+                    "secondary-fixed-dim": "#2fd9f4",
+                    "surface-tint": "#ddb7ff",
+                    "tertiary-fixed-dim": "#ffafd3",
+                    "surface-container-high": "#2a2a2a",
+                    "error-container": "#93000a",
+                    "inverse-surface": "#e5e2e1",
+                    "surface-dim": "#131313"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "base": "8px",
+                    "max-width": "1280px",
+                    "margin-mobile": "20px",
+                    "margin-desktop": "80px",
+                    "gutter": "24px"
+            },
+            "fontFamily": {
+                    "display-xl": ["Outfit"],
+                    "label-sm": ["Inter"],
+                    "headline-md": ["Outfit"],
+                    "body-lg": ["Inter"],
+                    "body-md": ["Inter"],
+                    "headline-lg": ["Outfit"],
+                    "headline-lg-mobile": ["Outfit"]
+            },
+            "fontSize": {
+                    "display-xl": ["72px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                    "label-sm": ["12px", {"lineHeight": "1.0", "letterSpacing": "0.1em", "fontWeight": "600"}],
+                    "headline-md": ["32px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "headline-lg": ["48px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                    "headline-lg-mobile": ["32px", {"lineHeight": "1.2", "fontWeight": "700"}]
+            }
+          },
+        },
+      }
+    </script>
+</head>
+<body class="bg-background">
+<!-- TopNavBar -->
+<header class="fixed top-0 w-full z-50 bg-surface/30 backdrop-blur-2xl border-b border-white/10 translate-y-0" id="main-header">
+<div class="flex justify-between items-center w-full px-margin-desktop h-20 max-w-max-width mx-auto">
+<div class="font-display-xl text-headline-md font-bold text-primary tracking-tighter">
+            Catvers Studio
+        </div>
+<nav class="hidden md:flex gap-gutter items-center">
+<a class="text-primary border-b-2 border-primary pb-1 font-body-md text-body-md transition-all" href="#">Projects</a>
+<a class="text-on-surface-variant font-medium font-body-md text-body-md hover:text-secondary-fixed transition-colors duration-300" href="#">Contact</a>
+<button class="ml-4 bg-primary text-on-primary font-bold px-6 py-2 rounded-full active:scale-95 transition-transform">
+                Hire Us
+            </button>
+</nav>
+<button class="md:hidden text-primary">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</header>
+<!-- Hero Section -->
+<section class="relative h-screen flex flex-col justify-center items-center overflow-hidden">
+
+<div class="relative z-10 text-center px-margin-mobile max-w-4xl mx-auto reveal active">
+<span class="inline-block px-4 py-1 rounded-full bg-primary-container/20 text-primary font-label-sm text-label-sm border border-primary/20 mb-6 uppercase tracking-widest">
+            The Future of Craft
+        </span>
+<h1 class="font-display-xl text-display-xl text-white mb-6">
+            Catvers Studio: Sculpting <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary via-secondary to-tertiary">Digital Horizons</span>
+</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto mb-10">
+            An independent creative laboratory leveraging advanced AI-driven creation tools to build immersive digital experiences, high-fidelity environments, and next-generation narrative frameworks.
+        </p>
+<div class="flex flex-col md:flex-row gap-gutter justify-center">
+<button class="bg-primary text-on-primary font-bold px-10 py-4 rounded-xl shine-effect shadow-[0_0_20px_rgba(221,183,255,0.3)] active:scale-95 transition-transform">
+                Explore Works
+            </button>
+<button class="bg-white/5 backdrop-blur-md border border-white/10 text-white font-bold px-10 py-4 rounded-xl shine-effect active:scale-95 transition-transform">
+                Our Philosophy
+            </button>
+</div>
+</div>
+<div class="absolute bottom-10 left-1/2 -translate-x-1/2 text-on-surface-variant/40 animate-bounce">
+<span class="material-symbols-outlined text-4xl">expand_more</span>
+</div>
+</section>
+<!-- Available Now Section -->
+<section class="py-24 px-margin-desktop max-w-max-width mx-auto">
+<div class="flex justify-between items-end mb-16 reveal">
+<div>
+<h2 class="font-display-xl text-headline-lg text-white mb-2">Available Now</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">Production-ready assets and environments for premium creators.</p>
+</div>
+<a class="hidden md:flex items-center gap-2 text-primary font-bold" href="#">
+            View All <span class="material-symbols-outlined">arrow_forward</span>
+</a>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<!-- Project Card 1 -->
+<div class="glass-card rounded-2xl overflow-hidden reveal shine-effect flex flex-col" style="transition-delay: 100ms">
+<div class="h-64 bg-surface-container relative shrink-0">
+<img class="w-full h-full object-cover" data-alt="A cinematic wide shot of a futuristic cyberpunk city at night with neon signs reflecting in rain-slicked pavement." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAU4QzpNDgnjTnPnPKksA7tXJB-f0vr4GIzTx3PUkkTeH0vTgXDNj0Dk1L8t0nSuGtpQlbZ0wXYSN6oG_2VzI06K2ZjWQyEEGIpMuAnUHtwg6rF3h4RWqj4PM-ScsS3IZ7KyN0kRJVjsg_Y9nCzj9FW0NJq8VdhrYkTy3VWGy9SlL8OJ81PUnZMZM-KfHAQG5lTiNLu-p4A9a2nNYPZxpXCFrVqNs3MI3plLDFTwYM08h8kkVF8GLA_SdT4KOOxa7Qousc2yK16yYG_"/>
+<div class="absolute top-4 right-4 px-3 py-1 bg-primary/20 backdrop-blur-md rounded-full text-primary font-label-sm text-label-sm border border-primary/30">
+                    Environment
+                </div>
+</div>
+<div class="p-8 flex flex-col flex-grow">
+<h3 class="font-display-xl text-headline-md text-white mb-3">Neo-Kyoto Core</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6">A modular urban framework designed for Unreal Engine 5, featuring high-fidelity textures and dynamic lighting.</p>
+<div class="flex flex-wrap gap-2 mb-8">
+<span class="px-3 py-1 bg-secondary/10 text-secondary rounded text-xs font-bold border border-secondary/20">UE5</span>
+<span class="px-3 py-1 bg-secondary/10 text-secondary rounded text-xs font-bold border border-secondary/20">4K TEXTURES</span>
+</div>
+<div class="mt-auto">
+<button class="w-full py-3 bg-white/5 border border-white/10 rounded-lg font-bold text-primary hover:bg-primary hover:text-on-primary transition-all">
+                        Details &amp; License
+                    </button>
+</div>
+</div>
+</div>
+<!-- Project Card 2 -->
+<div class="glass-card rounded-2xl overflow-hidden reveal shine-effect flex flex-col" style="transition-delay: 200ms">
+<div class="h-64 bg-surface-container relative shrink-0">
+<img class="w-full h-full object-cover" data-alt="Close-up macro photography of an advanced cybernetic organic organism." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAP4MLLGLVd3St02VztKjCbCWgq3kTI5PqziFSPWe6KcZEHspVN-qOPf3pGF-aCKrM0LyT860BLXISvbE96y-do3KOp9kScVjBIS8MD6Q_LOwZbOxyt87bX-DvR4cUzmnz_QuEZ1S2gzdu3sJsQ5vD31VVVkzxR29jxuE2lhZMWi09MLYtnmwQlXbdfi9p44A6hvcOMGEU4xumujckdKXGHFY7u5IS26y-3ZJWwdSJEQCJm5fyms-qZGHB4V9yMKQpCeJiYWlsZ9kcs"/>
+<div class="absolute top-4 right-4 px-3 py-1 bg-primary/20 backdrop-blur-md rounded-full text-primary font-label-sm text-label-sm border border-primary/30">
+                    Character
+                </div>
+</div>
+<div class="p-8 flex flex-col flex-grow">
+<h3 class="font-display-xl text-headline-md text-white mb-3">Synapse-01</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6">Fully rigged bio-mechanical entity with procedural animation layers and custom AI behavior scripts.</p>
+<div class="flex flex-wrap gap-2 mb-8">
+<span class="px-3 py-1 bg-secondary/10 text-secondary rounded text-xs font-bold border border-secondary/20">RIGGED</span>
+<span class="px-3 py-1 bg-secondary/10 text-secondary rounded text-xs font-bold border border-secondary/20">AI-DRIVEN</span>
+</div>
+<div class="mt-auto">
+<button class="w-full py-3 bg-white/5 border border-white/10 rounded-lg font-bold text-primary hover:bg-primary hover:text-on-primary transition-all">
+                        Details &amp; License
+                    </button>
+</div>
+</div>
+</div>
+<!-- Project Card 3 -->
+<div class="glass-card rounded-2xl overflow-hidden reveal shine-effect flex flex-col" style="transition-delay: 300ms">
+<div class="h-64 bg-surface-container relative shrink-0">
+<img class="w-full h-full object-cover" data-alt="An abstract 3D render of floating glass shards and liquid chrome droplets." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCVDfT7tbYACdSI2HzRxp0NSLvDf6iUaKKeazpFW2HYjvVqGBNLIFgv3x0UbS_gybJynE-IhE2XgoFkvKYhVPgGPQ29kn4lOUpgwxusUfkvIFZWcrsyLElPW2bVy3iUNtbGZXeCTNklV8mLbg8Nn4vAZmCcWSz03bltrURLBg7lfmS5rnUxUDydSwDVbjjcV-V6utobVmgLrWs-tk1VZlusLhYECiS29EuK6qS4YGqv4Bfgl6x9LY67lIUj8LeiQAji-Djq5ZfNUBfU"/>
+<div class="absolute top-4 right-4 px-3 py-1 bg-primary/20 backdrop-blur-md rounded-full text-primary font-label-sm text-label-sm border border-primary/30">
+                    Visuals
+                </div>
+</div>
+<div class="p-8 flex flex-col flex-grow">
+<h3 class="font-display-xl text-headline-md text-white mb-3">Aether Fragments</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6">A collection of 50+ procedural VDB effects and volumetric shaders for cinematic motion graphics.</p>
+<div class="flex flex-wrap gap-2 mb-8">
+<span class="px-3 py-1 bg-secondary/10 text-secondary rounded text-xs font-bold border border-secondary/20">VDB</span>
+<span class="px-3 py-1 bg-secondary/10 text-secondary rounded text-xs font-bold border border-secondary/20">HOUDINI</span>
+</div>
+<div class="mt-auto">
+<button class="w-full py-3 bg-white/5 border border-white/10 rounded-lg font-bold text-primary hover:bg-primary hover:text-on-primary transition-all">
+                        Details &amp; License
+                    </button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Upcoming Projects Section -->
+<section class="py-24 bg-surface-container-lowest/50 relative overflow-hidden">
+<div class="absolute inset-0 pointer-events-none">
+<div class="absolute top-0 left-1/4 w-96 h-96 bg-primary/5 rounded-full blur-[120px]"></div>
+<div class="absolute bottom-0 right-1/4 w-96 h-96 bg-secondary/5 rounded-full blur-[120px]"></div>
+</div>
+<div class="px-margin-desktop max-w-max-width mx-auto relative z-10">
+<div class="mb-16 reveal">
+<h2 class="font-display-xl text-headline-lg text-white mb-2">Upcoming Projects</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">In development. Join the waitlist for early access.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-gutter">
+<!-- Teaser Card 1 -->
+<div class="glass-card glow-pulse rounded-2xl p-12 flex flex-col justify-start min-h-[440px] reveal">
+<div class="flex items-center gap-4 mb-6">
+<div class="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary">visibility</span>
+</div>
+<span class="text-secondary font-label-sm text-label-sm tracking-widest uppercase">Project Obsidian</span>
+</div>
+<h3 class="font-display-xl text-headline-lg text-white mb-6">Quantum Narratives</h3>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-10 max-w-md">
+                    A collaborative AI storytelling engine where users shape the universe through high-latency neural connections. 
+                </p>
+<div class="mt-auto flex flex-col gap-6">
+<div class="flex items-center gap-4">
+<div class="flex -space-x-4">
+<div class="w-10 h-10 rounded-full border-2 border-background bg-surface-container flex items-center justify-center text-xs font-bold text-white">JD</div>
+<div class="w-10 h-10 rounded-full border-2 border-background bg-surface-container flex items-center justify-center text-xs font-bold text-white">MK</div>
+<div class="w-10 h-10 rounded-full border-2 border-background bg-surface-container flex items-center justify-center text-xs font-bold text-white">AS</div>
+</div>
+<span class="text-on-surface-variant/60 font-body-md text-body-md">1.2k on waitlist</span>
+</div>
+<button class="w-fit px-8 py-3 bg-primary/10 border border-primary/30 text-primary font-bold rounded-lg hover:bg-primary hover:text-on-primary transition-all">
+                        Join Waitlist
+                    </button>
+</div>
+</div>
+<!-- Teaser Card 2 -->
+<div class="glass-card glow-pulse rounded-2xl p-12 flex flex-col justify-start min-h-[440px] reveal" style="transition-delay: 200ms">
+<div class="flex items-center gap-4 mb-6">
+<div class="w-12 h-12 rounded-full bg-tertiary/20 flex items-center justify-center">
+<span class="material-symbols-outlined text-tertiary">rocket_launch</span>
+</div>
+<span class="text-tertiary font-label-sm text-label-sm tracking-widest uppercase">Project Nova</span>
+</div>
+<h3 class="font-display-xl text-headline-lg text-white mb-6">Astraea Nexus</h3>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-10 max-w-md">
+                    A persistent virtual spaceport designed for cross-platform integration and decentralized asset ownership.
+                </p>
+<div class="mt-auto">
+<button class="w-fit px-8 py-3 bg-tertiary/10 border border-tertiary/30 text-tertiary font-bold rounded-lg hover:bg-tertiary hover:text-on-tertiary transition-all">
+                        Request Invite
+                    </button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="w-full py-12 border-t border-outline-variant/20 bg-background">
+<div class="flex flex-col md:flex-row justify-between items-center px-margin-desktop max-w-max-width mx-auto gap-gutter">
+<div class="flex flex-col items-center md:items-start">
+<div class="font-display-xl text-headline-lg text-primary mb-2">Catvers Studio</div>
+<p class="font-body-md text-body-md text-on-surface-variant text-center md:text-left">
+                © 2024 Catvers Studio. All rights reserved. 
+                <span class="block mt-1 font-label-sm text-label-sm text-secondary">Powered by Netlify.</span>
+</p>
+</div>
+<div class="flex flex-wrap justify-center gap-8">
+<a class="text-on-surface-variant hover:text-primary transition-all duration-200 font-body-md text-body-md" href="#">LinkedIn</a>
+<a class="text-on-surface-variant hover:text-primary transition-all duration-200 font-body-md text-body-md" href="#">GitHub</a>
+<a class="text-on-surface-variant hover:text-primary transition-all duration-200 font-body-md text-body-md" href="#">Behance</a>
+<a class=                    "secondary-fixed": "#a2eeff",
                     "surface-variant": "#353534",
                     "secondary-container": "#00cbe6",
                     "on-tertiary-fixed": "#3d0026",
