@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>About & Contact | Catvers Studio</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Inter:wght@100..900&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Outfit:wght@100..900&display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-container-highest": "#353534",
+                    "on-secondary-fixed": "#001f25",
+                    "on-primary-fixed": "#2c0051",
+                    "primary-container": "#b76dff",
+                    "on-surface-variant": "#cfc2d6",
+                    "outline-variant": "#4d4354",
+                    "tertiary": "#ffafd3",
+                    "surface-container-low": "#1c1b1b",
+                    "tertiary-fixed-dim": "#ffafd3",
+                    "on-error-container": "#ffdad6",
+                    "primary": "#ddb7ff",
+                    "on-tertiary-fixed": "#3d0026",
+                    "secondary": "#5de6ff",
+                    "on-secondary": "#00363e",
+                    "error-container": "#93000a",
+                    "on-error": "#690005",
+                    "on-surface": "#e5e2e1",
+                    "on-primary": "#490080",
+                    "secondary-fixed": "#a2eeff",
+                    "surface-tint": "#ddb7ff",
+                    "secondary-fixed-dim": "#2fd9f4",
+                    "surface-container-high": "#2a2a2a",
+                    "surface-dim": "#131313",
+                    "on-tertiary": "#620040",
+                    "on-secondary-fixed-variant": "#004e5a",
+                    "error": "#ffb4ab",
+                    "inverse-on-surface": "#313030",
+                    "tertiary-fixed": "#ffd8e7",
+                    "secondary-container": "#00cbe6",
+                    "on-tertiary-fixed-variant": "#85145a",
+                    "on-primary-container": "#400071",
+                    "on-background": "#e5e2e1",
+                    "primary-fixed-dim": "#ddb7ff",
+                    "on-tertiary-container": "#560038",
+                    "tertiary-container": "#e364a7",
+                    "surface-container": "#201f1f",
+                    "inverse-surface": "#e5e2e1",
+                    "surface-variant": "#353534",
+                    "surface-container-lowest": "#0e0e0e",
+                    "background": "#131313",
+                    "on-secondary-container": "#00515d",
+                    "surface-bright": "#3a3939",
+                    "surface": "#131313",
+                    "primary-fixed": "#f0dbff",
+                    "outline": "#988d9f",
+                    "inverse-primary": "#842bd2",
+                    "on-primary-fixed-variant": "#6900b3"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "gutter": "24px",
+                    "max-width": "1280px",
+                    "base": "8px",
+                    "margin-desktop": "80px",
+                    "margin-mobile": "20px"
+            },
+            "fontFamily": {
+                    "label-sm": ["Inter"],
+                    "headline-md": ["Outfit"],
+                    "display-xl": ["Outfit"],
+                    "headline-lg-mobile": ["Outfit"],
+                    "body-lg": ["Inter"],
+                    "body-md": ["Inter"],
+                    "headline-lg": ["Outfit"]
+            },
+            "fontSize": {
+                    "label-sm": ["12px", {"lineHeight": "1.0", "letterSpacing": "0.1em", "fontWeight": "600"}],
+                    "headline-md": ["32px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                    "display-xl": ["72px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                    "headline-lg-mobile": ["32px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "headline-lg": ["48px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "700"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .glass-card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .glass-card:hover {
+            border-color: rgba(221, 183, 255, 0.4);
+            box-shadow: 0 0 20px rgba(221, 183, 255, 0.1);
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            background-color: #050505;
+            color: #e5e2e1;
+            overflow-x: hidden;
+        }
+        .glow-sphere {
+            position: absolute;
+            width: 600px;
+            height: 600px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(132, 43, 210, 0.1) 0%, rgba(5, 5, 5, 0) 70%);
+            filter: blur(80px);
+            z-index: -1;
+        }
+    </style>
+</head>
+<body class="font-body-md">
+<!-- Global Background Elements -->
+<div class="glow-sphere top-[-10%] left-[-10%]"></div>
+<div class="glow-sphere bottom-[-10%] right-[-10%]" style="background: radial-gradient(circle, rgba(93, 230, 255, 0.08) 0%, rgba(5, 5, 5, 0) 70%);"></div>
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-surface/30 backdrop-blur-2xl border-b border-white/10 h-20">
+<div class="flex justify-between items-center w-full px-margin-mobile md:px-margin-desktop h-full max-w-max-width mx-auto">
+<div class="font-display-xl text-headline-md font-bold text-primary tracking-tighter">
+                Catvers Studio
+            </div>
+<div class="hidden md:flex gap-8 items-center">
+<a class="text-on-surface-variant font-medium hover:text-secondary-fixed transition-colors duration-300" href="#">Projects</a>
+<a class="text-primary border-b-2 border-primary pb-1 transition-colors duration-300" href="#">Contact</a>
+<button class="bg-primary text-on-primary px-6 py-2 rounded-full font-bold active:scale-95 transition-transform hover:opacity-90">
+                    Hire Us
+                </button>
+</div>
+<div class="md:hidden">
+<span class="material-symbols-outlined text-primary cursor-pointer">menu</span>
+</div>
+</div>
+</nav>
+<main class="pt-32 pb-20 px-margin-mobile md:px-margin-desktop max-w-max-width mx-auto">
+<!-- Hero Section / About Us -->
+<section class="mb-24">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+<div class="lg:col-span-7">
+<h1 class="font-display-xl text-headline-lg-mobile md:text-display-xl text-primary mb-8 leading-tight">
+                        The Story Behind <br/>
+<span class="text-secondary">the Studio</span>
+</h1>
+<div class="space-y-6 text-on-surface-variant font-body-lg text-body-lg max-w-2xl">
+<p>
+                            Catvers Studio isn't your typical tech agency. It is an independent creative venture born out of curiosity and a relentless drive to explore the boundaries of the digital world. 
+                        </p>
+<div class="glass-card p-8 rounded-xl border-l-4 border-l-primary">
+<p class="italic">
+                                "I am <span class="text-primary font-bold">Asis Kumar Singh</span>, a student on a journey of discovery. I am not a professional coder, app developer, or website designer by trade. Catvers Studio is my personal canvas."
+                            </p>
+</div>
+<p>
+                            For me, building things is a hobby fueled by the power of modern AI tools. It’s about the thrill of turning an abstract concept into a functional reality, learning every step of the way. Catvers Studio represents the intersection of human creativity and artificial intelligence.
+                        </p>
+<p>
+                            This project is a testament to the fact that passion and the right tools can bridge the gap between "knowing how" and "wanting to do." Every pixel and line of logic here is a reflection of my honest pursuit of knowledge and my excitement for what technology can achieve today.
+                        </p>
+</div>
+</div>
+<div class="lg:col-span-5 relative">
+<div class="aspect-square rounded-3xl overflow-hidden glass-card p-2 relative group">
+<img class="w-full h-full object-cover rounded-2xl opacity-80 group-hover:opacity-100 transition-opacity duration-500" data-alt="A professional yet artistic portrait of a young South Asian male creator in a tech-inspired setting. The lighting is dramatic, with purple and cyan neon accents reflecting off a sleek, dark background. The environment suggests a high-end digital workspace with subtle bokeh effects from glowing computer terminals, capturing a mood of focused innovation and visionary thinking in a Cyber-Luxe aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD6QpnYHixoWFugI42GSUeFekQ5OSNLPUI7bef07FxDF5Dq1rdLbA1YuHvQ8b57atLpM5_8C91eawqiFl5GiuQbYujgklPPW5q0WGx6HOQ90_4WwNHUZ26lOFPuvXFIV3xQ5CECEtULjghY7xEpg2qfs_fKEm8WZUQi04zJNWADlN8brnXBO0vAQMYNmbUpLCXRR6sQGIQiTeW969bW8r0azASqKPKnROn9aIWF0a5McweGl8Ud8an_T9Iddfxco0q9ZFpXTWYf5iTI"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent"></div>
+<div class="absolute bottom-8 left-8">
+<p class="font-display-xl text-headline-md text-white">Asis Kumar Singh</p>
+<p class="text-secondary font-label-sm tracking-widest uppercase">Founder & Creator</p>
+</div>
+</div>
+<!-- Decorative Element -->
+<div class="absolute -top-6 -right-6 w-32 h-32 border-t-2 border-r-2 border-primary opacity-30"></div>
+<div class="absolute -bottom-6 -left-6 w-32 h-32 border-b-2 border-l-2 border-secondary opacity-30"></div>
+</div>
+</div>
+</section>
+<!-- Contact Us Section -->
+<section id="contact">
+<div class="flex items-center gap-4 mb-12">
+<div class="h-[1px] flex-grow bg-outline-variant/30"></div>
+<h2 class="font-display-xl text-headline-md text-primary">Get In Touch</h2>
+<div class="h-[1px] flex-grow bg-outline-variant/30"></div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gutter">
+<!-- Email Card -->
+<div class="glass-card p-8 rounded-2xl flex flex-col items-start gap-4 group transition-all duration-300 hover:-translate-y-2">
+<div class="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-on-primary transition-colors">
+<span class="material-symbols-outlined">alternate_email</span>
+</div>
+<div>
+<p class="text-on-surface-variant font-label-sm mb-1 uppercase tracking-tighter">Direct Email</p>
+<h3 class="font-headline-md text-secondary break-all">catversstudio@gmail.com</h3>
+</div>
+<a class="mt-4 text-primary font-bold flex items-center gap-2 hover:underline" href="mailto:catversstudio@gmail.com">
+                        Send Message <span class="material-symbols-outlined text-sm">north_east</span>
+</a>
+</div>
+<!-- Location Card -->
+<div class="glass-card p-8 rounded-2xl flex flex-col items-start gap-4 group transition-all duration-300 hover:-translate-y-2">
+<div class="w-12 h-12 rounded-lg bg-secondary/10 flex items-center justify-center text-secondary group-hover:bg-secondary group-hover:text-on-secondary transition-colors">
+<span class="material-symbols-outlined">location_on</span>
+</div>
+<div>
+<p class="text-on-surface-variant font-label-sm mb-1 uppercase tracking-tighter">Studio Location</p>
+<address class="not-italic font-headline-md text-white/90">
+                            Tentala, Mayurbhanj, <br/>
+                            Odisha, India, 757087
+                        </address>
+</div>
+<div class="text-secondary font-bold flex items-center gap-2 mt-auto" data-location="Mayurbhanj, Odisha" style="">
+                        View on Map <span class="material-symbols-outlined text-sm">map</span>
+</div>
+</div>
+<!-- Developer Card -->
+<div class="glass-card p-8 rounded-2xl flex flex-col items-start gap-4 group transition-all duration-300 hover:-translate-y-2 lg:col-span-1 md:col-span-2 lg:col-span-1">
+<div class="w-12 h-12 rounded-lg bg-tertiary/10 flex items-center justify-center text-tertiary group-hover:bg-tertiary group-hover:text-on-tertiary transition-colors">
+<span class="material-symbols-outlined">person</span>
+</div>
+<div>
+<p class="text-on-surface-variant font-label-sm mb-1 uppercase tracking-tighter">Lead Developer</p>
+<h3 class="font-headline-md text-primary">Asis Kumar Singh</h3>
+<p class="text-on-surface-variant text-body-md mt-2">Independent creator exploring the intersection of design & AI.</p>
+</div>
+<div class="flex gap-4 mt-auto">
+<span class="material-symbols-outlined text-on-surface-variant hover:text-primary cursor-pointer">share</span>
+</div></div></div></section></main></body></html>
