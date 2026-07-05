@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Dashboard | Catvers Studio Admin</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries">
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Inter:wght@100..900&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+    <style>
+        /* All styles from the dashboard design above */
+        /* (Copy the complete dashboard styles from earlier) */
+        /* For brevity, I'm showing the core structure */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            background: #050505;
+            color: #e5e2e1;
+            font-family: 'Inter', sans-serif;
+            overflow-x: hidden;
+        }
+        /* ... Full dashboard styles ... */
+        .glass-card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 20px;
+            transition: all 0.3s ease;
+        }
+        .glass-card:hover {
+            background: rgba(255, 255, 255, 0.05);
+            border-color: rgba(255, 255, 255, 0.1);
+            transform: translateY(-2px);
+        }
+        /* Sidebar */
+        .sidebar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            width: 260px;
+            background: rgba(5, 5, 5, 0.95);
+            backdrop-filter: blur(30px);
+            border-right: 1px solid rgba(255, 255, 255, 0.06);
+            padding: 20px 12px;
+            z-index: 100;
+            overflow-y: auto;
+            transition: transform 0.3s ease;
+        }
+        .sidebar .logo {
+            font-family: 'Outfit', sans-serif;
+            font-weight: 700;
+            font-size: 20px;
+            color: #ddb7ff;
+            padding: 0 12px 24px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .sidebar .logo .icon {
+            width: 36px;
+            height: 36px;
+            border-radius: 10px;
+            background: linear-gradient(135deg, #ddb7ff, #b76dff);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #050505;
+            font-weight: 700;
+        }
+        .sidebar .nav-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 10px 14px;
+            border-radius: 10px;
+            color: #988d9f;
+            transition: all 0.2s ease;
+            cursor: pointer;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+        }
+        .sidebar .nav-item:hover {
+            background: rgba(255, 255, 255, 0.04);
+            color: #e5e2e1;
+        }
+        .sidebar .nav-item.active {
+            background: rgba(221, 183, 255, 0.08);
+            color: #ddb7ff;
+        }
+        .sidebar .nav-item .badge {
+            margin-left: auto;
+            background: rgba(221, 183, 255, 0.12);
+            color: #ddb7ff;
+            font-size: 10px;
+            padding: 2px 10px;
+            border-radius: 9999px;
+        }
+        .main-content {
+            margin-left: 260px;
+            padding: 24px 32px 32px;
+            min-height: 100vh;
+        }
+        /* Top bar */
+        .top-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 16px 0 24px;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+        .top-bar h1 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 24px;
+            font-weight: 700;
+            color: #ffffff;
+        }
+        .top-bar .sub {
+            color: #988d9f;
+            font-size: 14px;
+        }
+        .search-bar {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 9999px;
+            padding: 8px 16px 8px 18px;
+            min-width: 200px;
+        }
+        .search-bar input {
+            background: none;
+            border: none;
+            outline: none;
+            color: #e5e2e1;
+            font-size: 14px;
+            width: 100%;
+        }
+        .search-bar input::placeholder {
+            color: #4d4354;
+        }
+        .user-avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #ddb7ff, #b76dff);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #050505;
+            font-weight: 600;
+            cursor: pointer;
+        }
+        /* Stats */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 16px;
+            margin-bottom: 24px;
+        }
+        .stat-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 16px;
+            padding: 18px 20px;
+        }
+        .stat-card .number {
+            font-family: 'Outfit', sans-serif;
+            font-size: 28px;
+            font-weight: 700;
+            color: #ffffff;
+        }
+        .stat-card .label {
+            font-size: 13px;
+            color: #988d9f;
+            margin-top: 2px;
+        }
+        .stat-card .icon {
+            font-size: 22px;
+            margin-bottom: 6px;
+        }
+        /* Quick Actions */
+        .quick-actions {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 10px;
+            margin-bottom: 24px;
+        }
+        .quick-action {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 12px;
+            padding: 14px 16px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .quick-action:hover {
+            background: rgba(255, 255, 255, 0.05);
+            border-color: rgba(255, 255, 255, 0.12);
+            transform: translateY(-2px);
+        }
+        .quick-action .icon {
+            font-size: 24px;
+            display: block;
+            margin-bottom: 4px;
+            color: #ddb7ff;
+        }
+        .quick-action .label {
+            font-size: 11px;
+            color: #988d9f;
+            font-weight: 500;
+        }
+        /* Tables */
+        .table-wrap {
+            overflow-x: auto;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th {
+            text-align: left;
+            padding: 12px 16px;
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            color: #4d4354;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+        }
+        td {
+            padding: 12px 16px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+            font-size: 14px;
+        }
+        tr:hover td {
+            background: rgba(255, 255, 255, 0.02);
+        }
+        .status-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 4px 12px;
+            border-radius: 9999px;
+            font-size: 12px;
+            font-weight: 500;
+        }
+        .status-badge.published {
+            background: rgba(74, 222, 128, 0.1);
+            color: #4ade80;
+        }
+        .status-badge.draft {
+            background: rgba(251, 191, 36, 0.1);
+            color: #fbbf24;
+        }
+        .status-badge .dot {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+        }
+        .status-badge.published .dot {
+            background: #4ade80;
+        }
+        .status-badge.draft .dot {
+            background: #fbbf24;
+        }
+        .btn-edit {
+            padding: 4px 14px;
+            border-radius: 6px;
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            color: #988d9f;
+            font-size: 12px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+        .btn-edit:hover {
+            background: rgba(255, 255, 255, 0.08);
+            color: #e5e2e1;
+        }
+        @media (max-width: 768px) {
+            .sidebar {
+                transform: translateX(-100%);
+            }
+            .sidebar.open {
+                transform: translateX(0);
+            }
+            .main-content {
+                margin-left: 0;
+                padding: 16px;
+            }
+            .top-bar {
+                flex-direction: column;
+                align-items: stretch;
+            }
+            .search-bar {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Sidebar -->
+    <aside class="sidebar" id="sidebar">
+        <div class="logo">
+            <div class="icon">C</div>
+            Catvers Studio
+        </div>
+        <div style="margin-top:20px; display:flex; flex-direction:column; gap:2px;">
+            <a href="#" class="nav-item active">
+                <span class="material-symbols-outlined">dashboard</span> Dashboard
+            </a>
+            <a href="#" class="nav-item">
+                <span class="material-symbols-outlined">apps</span> Apps
+                <span class="badge">24</span>
+            </a>
+            <a href="#" class="nav-item">
+                <span class="material-symbols-outlined">rocket_launch</span> Upcoming
+                <span class="badge">6</span>
+            </a>
+            <a href="#" class="nav-item">
+                <span class="material-symbols-outlined">article</span> Blog
+                <span class="badge">12</span>
+            </a>
+            <a href="#" class="nav-item">
+                <span class="material-symbols-outlined">photo_library</span> Media
+            </a>
+            <a href="#" class="nav-item">
+                <span class="material-symbols-outlined">settings</span> Settings
+            </a>
+            <div style="margin-top:auto; border-top:1px solid rgba(255,255,255,0.06); padding-top:12px;">
+                <a href="login.html" class="nav-item" style="color:#4d4354;">
+                    <span class="material-symbols-outlined">logout</span> Logout
+                </a>
+            </div>
+        </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Top Bar -->
+        <div class="top-bar">
+            <div>
+                <h1>Dashboard</h1>
+                <div class="sub">Friday, July 3, 2026</div>
+            </div>
+            <div style="display:flex; align-items:center; gap:12px; flex-wrap:wrap;">
+                <div class="search-bar">
+                    <span class="material-symbols-outlined" style="color:#4d4354; font-size:20px;">search</span>
+                    <input type="text" placeholder="Search..." />
+                    <span style="font-size:11px; color:#4d4354; background:rgba(255,255,255,0.04); padding:2px 10px; border-radius:4px;">⌘K</span>
+                </div>
+                <div class="user-avatar">AS</div>
+            </div>
+        </div>
+
+        <!-- Welcome -->
+        <div style="margin-bottom:24px;">
+            <h2 style="font-family:'Outfit',sans-serif; font-size:22px; font-weight:600;">Welcome back, <span style="color:#ddb7ff;">Asis</span> 👋</h2>
+            <p style="color:#988d9f; font-size:15px;">Here's what's happening with your studio today.</p>
+        </div>
+
+        <!-- Quick Actions -->
+        <div class="quick-actions">
+            <div class="quick-action"><span class="material-symbols-outlined icon">add_circle</span><span class="label">Add App</span></div>
+            <div class="quick-action"><span class="material-symbols-outlined icon">rocket</span><span class="label">Add Project</span></div>
+            <div class="quick-action"><span class="material-symbols-outlined icon">edit_note</span><span class="label">New Blog</span></div>
+            <div class="quick-action"><span class="material-symbols-outlined icon">upload_file</span><span class="label">Upload Media</span></div>
+            <div class="quick-action"><span class="material-symbols-outlined icon">edit</span><span class="label">Edit Homepage</span></div>
+            <div class="quick-action"><span class="material-symbols-outlined icon">settings</span><span class="label">Settings</span></div>
+        </div>
+
+        <!-- Stats -->
+        <div class="stats-grid">
+            <div class="stat-card"><span class="material-symbols-outlined icon">apps</span><div class="number">24</div><div class="label">Total Apps</div></div>
+            <div class="stat-card"><span class="material-symbols-outlined icon" style="color:#4ade80;">check_circle</span><div class="number">18</div><div class="label">Available</div></div>
+            <div class="stat-card"><span class="material-symbols-outlined icon" style="color:#5de6ff;">pending</span><div class="number">6</div><div class="label">Upcoming</div></div>
+            <div class="stat-card"><span class="material-symbols-outlined icon" style="color:#fbbf24;">download</span><div class="number">1,247</div><div class="label">Downloads</div></div>
+            <div class="stat-card"><span class="material-symbols-outlined icon" style="color:#ffafd3;">article</span><div class="number">12</div><div class="label">Blog Posts</div></div>
+            <div class="stat-card"><span class="material-symbols-outlined icon" style="color:#ddb7ff;">people</span><div class="number">342</div><div class="label">Visitors</div></div>
+        </div>
+
+        <!-- Recent Apps -->
+        <div class="glass-card" style="padding:24px; margin-bottom:24px;">
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:16px;">
+                <h3 style="font-family:'Outfit',sans-serif; font-size:18px; font-weight:600;">Recent Apps</h3>
+                <span style="color:#4d4354; font-size:13px; cursor:pointer;">View All →</span>
+            </div>
+            <div class="table-wrap">
+                <table>
+                    <thead><tr><th>App</th><th>Version</th><th>Status</th><th>Downloads</th><th>Updated</th><th></th></tr></thead>
+                    <tbody>
+                        <tr><td>Neo-Kyoto Core</td><td>v1.2.4</td><td><span class="status-badge published"><span class="dot"></span>Published</span></td><td>2,847</td><td>Today</td><td><button class="btn-edit">Edit</button></td></tr>
+                        <tr><td>Synapse-01</td><td>v2.0.1</td><td><span class="status-badge published"><span class="dot"></span>Published</span></td><td>1,823</td><td>Yesterday</td><td><button class="btn-edit">Edit</button></td></tr>
+                        <tr><td>Aether Fragments</td><td>v1.1.8</td><td><span class="status-badge draft"><span class="dot"></span>Draft</span></td><td>892</td><td>3 days ago</td><td><button class="btn-edit">Edit</button></td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div style="border-top:1px solid rgba(255,255,255,0.06); padding-top:16px; display:flex; justify-content:space-between; flex-wrap:wrap; gap:8px;">
+            <span style="color:#4d4354; font-size:13px;">© 2026 Catvers Studio. All rights reserved.</span>
+            <span style="color:#4d4354; font-size:13px;">● System Online</span>
+        </div>
+    </main>
+
+    <script>
+        // Sidebar toggle for mobile
+        // Simple session check - redirect to login if not authenticated
+        if (sessionStorage.getItem('adminLoggedIn') !== 'true') {
+            window.location.href = 'login.html';
+        }
+
+        // Auto logout after 30 minutes
+        setTimeout(() => {
+            sessionStorage.removeItem('adminLoggedIn');
+            sessionStorage.removeItem('adminLoginTime');
+            window.location.href = 'login.html';
+        }, 1800000);
+
+        // Logout button
+        document.querySelector('.nav-item.logout')?.addEventListener('click', function(e) {
+            e.preventDefault();
+            sessionStorage.removeItem('adminLoggedIn');
+            sessionStorage.removeItem('adminLoginTime');
+            window.location.href = 'login.html';
+        });
+    </script>
+</body>
+</html>
