@@ -1,1 +1,58 @@
-
+{
+  "apps": [
+    {
+      "id": "neo-kyoto-core",
+      "name": "Neo-Kyoto Core",
+      "slug": "neo-kyoto-core",
+      "shortDescription": "Modular urban framework for Unreal Engine 5 with 4K textures.",
+      "fullDescription": "Neo-Kyoto Core is a revolutionary environment toolkit designed to bridge the gap between architectural visualization and game-ready cyberpunk environments. Developed over 18 months by the Catvers Studio team, this application provides artists with a 'Glassmorphic' workflow for creating complex urban landscapes.",
+      "category": "Environment",
+      "version": "1.2.4",
+      "status": "published",
+      "iconUrl": "https://lh3.googleusercontent.com/aida-public/AB6AXuBw-MGoYTgZcrW7sGL3G4sa9yjjytesR33QCPydmd_S5em79-d1c-cbmuCkRem1Oymaux5IZwhL-jhySMHYBDaOziKqmpqOffCwPzsg4BTid2YDmXjcZwjfAjz9I2TUGqUrhSfZRfC-B5kWGoSLbeHuPv2YpGchtlYlFZzsCWtHQM4jiUOoAtCfwogt7dca4QMn9CMbF3aYuXlejvan9d_g6vCHV0IbJ3mN6gn-5keyN20B4MIzwe-hgg",
+      "bannerUrl": "https://lh3.googleusercontent.com/aida-public/AB6AXuAU4QzpNDgnjTnPnPKksA7tXJB-f0vr4GIzTx3PUkkTeH0vTgXDNj0Dk1L8t0nSuGtpQlbZ0wXYSN6oG_2VzI06K2ZjWQyEEGIpMuAnUHtwg6rF3h4RWqj4PM-ScsS3IZ7KyN0kRJVjsg_Y9nCzj9FW0NJq8VdhrYkTy3VWGy9SlL8OJ81PUnZMZM-KfHAQG5lTiNLu-p4A9a2nNYPZxpXCFrVqNs3MI3plLDFTwYM08h8kkVF8GLA_SdT4KOOxa7Qousc2yK16yYG_",
+      "screenshots": [
+        "https://lh3.googleusercontent.com/aida-public/AB6AXuBvPtxYrZb2q5V1LkxLGnQ8m8bOF7e7DlCObnwSUP4zuZIhwxQ2vqB3jxRenqaZxdiVRcW-daNXP25SBsJKBA4lXKpZw4zvuVVBOxKR5lyOzyNGe-p03u7iL8aFvS2C_13jpl76U6zYgE20vIuGAWWbdaxRFh9YfKx_zfgl_L3ECLEY5mGHJxTwo4hJpxoL4f0Q1tq1aA7OOkUOiocLeOvmaHuwrGnakhrEEK-sNQloBvkH8Z82IZbW7g",
+        "https://lh3.googleusercontent.com/aida-public/AB6AXuCK_m-ONynrs3yPHilNwI3-zLw_efisj4LD3PPK_SEldIUhUuwsgCeZQsWi68ULC8h9OxFhsA6lnlH9rKPAtke6sa4u3pOmjcboX3gApIojrfMT40dmd17yBeiL1NIbMeUANCfh4pG5ZWUpFx_O3zQUMU62sYIegfx9ia8Z2DXrjQl6LnihiPyXTVGPRo69B7rSmZPQM4p47lg7KY1igqJFPfgfh2oTPjCvwQIrDjhg1db5G82cMH4laA",
+        "https://lh3.googleusercontent.com/aida-public/AB6AXuBQrYGLP2PqGm49UMiQv7hqLIgjMheJ4qHuh1U-qjMPWniyd8QZAFaa8HLaXERDQR7JQVUt2zrbJJiIMcLLeABURAxMLbZ2rDBmxm9meMWaYGHUEy1xq1Lj_-9NHXEsYZnkfj0chgGuXA4NNoixFL8uCU0_fiXiY5jGy08gAxx9F7lxAL8ZIQy8aLjoATQpQxYzlJlyELhNH_q0ruCtRMe5nLYuQssMYuzbyhxj7WWBwD986JaGh7uIIw"
+      ],
+      "downloadUrl": "https://example.com/downloads/neo-kyoto-core.zip",
+      "demoUrl": "https://example.com/demo/neo-kyoto-core",
+      "githubUrl": "https://github.com/catversstudio",
+      "features": [
+        {
+          "icon": "dynamic_form",
+          "title": "Dynamic Weather",
+          "description": "Real-time rain, fog, and lightning systems optimized for cyberpunk aesthetics and Ray-Tracing."
+        },
+        {
+          "icon": "architecture",
+          "title": "Modular Assets",
+          "description": "Over 500+ high-fidelity assets ready to snap-grid for rapid level design and world-building."
+        },
+        {
+          "icon": "lightbulb",
+          "title": "Lumen Lighting",
+          "description": "Pre-configured global illumination settings that respond instantly to time-of-day changes."
+        },
+        {
+          "icon": "speed",
+          "title": "Optimized Mesh",
+          "description": "Proprietary LOD systems ensure high frame rates even on mid-range hardware like RTX 30-series."
+        }
+      ],
+      "requirements": [
+        "Unreal Engine 5.3 or higher",
+        "NVIDIA RTX 3060+ (or equivalent)",
+        "16GB RAM Minimum"
+      ],
+      "releaseDate": "2026-01-15",
+      "lastUpdated": "2026-07-03",
+      "featured": true,
+      "views": 2847,
+      "downloads": 2847,
+      "seoTitle": "Neo-Kyoto Core - Environment Toolkit",
+      "seoDescription": "Download Neo-Kyoto Core, the ultimate cyberpunk environment toolkit for Unreal Engine 5."
+    }
+  ]
+}
