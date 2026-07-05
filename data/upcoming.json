@@ -1,0 +1,28 @@
+{
+  "projects": [
+    {
+      "id": "quantum-narratives",
+      "name": "Quantum Narratives",
+      "slug": "quantum-narratives",
+      "description": "A collaborative AI storytelling engine where users shape the universe through high-latency neural connections.",
+      "coverImage": "https://via.placeholder.com/600x400/1a1a2e/4d4354?text=Quantum+Narratives",
+      "progress": 65,
+      "status": "development",
+      "expectedRelease": "2026-08-15",
+      "features": ["AI Storytelling", "Neural Connections", "Real-time Generation"],
+      "tags": ["AI", "Storytelling", "Interactive"]
+    },
+    {
+      "id": "astrea-nexus",
+      "name": "Astraea Nexus",
+      "slug": "astrea-nexus",
+      "description": "A persistent virtual spaceport designed for cross-platform integration and decentralized asset ownership.",
+      "coverImage": "https://via.placeholder.com/600x400/1a1a2e/4d4354?text=Astraea+Nexus",
+      "progress": 40,
+      "status": "planning",
+      "expectedRelease": "2026-10-30",
+      "features": ["Cross-Platform", "Decentralized", "Virtual Spaceport"],
+      "tags": ["Metaverse", "Virtual Reality", "Blockchain"]
+    }
+  ]
+}
